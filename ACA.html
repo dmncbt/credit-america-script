@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACA SCREENING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f0f4fa;
+      --text-color: #1c1c1c;
+      --card-color: #ffffff;
+      --accent-color: #2b6cb0;
+      --btn-radius: 25px;
+      --transition-speed: 0.3s;
+    }
+
+    body.dark {
+      --bg-color: #1e1e2f;
+      --text-color: #e2e8f0;
+      --card-color: #2c2c3e;
+      --accent-color: #4299e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--card-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .toggle-btn {
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: var(--btn-radius);
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+
+    .toggle-btn:hover {
+      background-color: #265a94;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .main {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content {
+      max-width: 800px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: var(--card-color);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: background-color var(--transition-speed);
+    }
+
+    .content span {
+      color: red;
+      font-weight: bold;
+    }
+
+    .section {
+      margin-top: 1.5rem;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: var(--btn-radius);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-rebuttal {
+      background-color: #9b59b6;
+    }
+
+    .btn-nq {
+      background-color: #ff7f50;
+      color: #000;
+    }
+
+    .btn-back {
+      background-color: #38a169;
+    }
+
+    .btn-intro {
+      background-color: #ff4d4d;
+    }
+
+    footer {
+      background-color: var(--card-color);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">ACA SCREENING</div>
+    <button class="toggle-btn" id="themeToggle">Toggle Dark Mode</button>
+  </header>
+
+  <main class="main">
+    <div class="content">
+      <p>1. I understand you are NOT enrolled in Medicare, Medicaid or any health insurance available through your work — is that correct? <span>Must be YES</span></p>
+      <p>2. Not under disability <span>Must be YES</span> <button class="btn btn-rebuttal" onclick="location.href='SSDI.html'">UNDER DISABILITY</button></p>
+      <p>3. Are you under 63 years old? <span>Must be YES</span></p>
+      <p>4. How much is your household annual income? <span>Must be at least $18k annually</span></p>
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-rebuttal" onclick="location.href='rebuttals.html'">REBUTTALS</button>
+      <button class="btn btn-nq" onclick="location.href='Student Loans.html'">NQ - NOT QUALIFIED</button>
+      <button class="btn btn-intro" onclick="location.href='index.html'">INTRODUCTION</button>
+    </div>
+  </main>
+
+  <footer>
+    Credit America Script V1 | Property of IGrant Marketing Services.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const theme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+  </script>
+</body>
+</html>

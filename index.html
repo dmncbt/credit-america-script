@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction</title>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    :root {
+      --bg-color: #f0f4fa;
+      --text-color: #1c1c1c;
+      --card-color: #ffffff;
+      --accent-color: #2b6cb0;
+      --btn-radius: 25px;
+      --transition-speed: 0.3s;
+    }
+
+    body.dark {
+      --bg-color: #1e1e2f;
+      --text-color: #e2e8f0;
+      --card-color: #2c2c3e;
+      --accent-color: #4299e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--card-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .toggle-btn {
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: var(--btn-radius);
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+
+    .toggle-btn:hover {
+      background-color: #265a94;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .main {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content {
+      max-width: 800px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: var(--card-color);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: background-color var(--transition-speed);
+    }
+
+    .response {
+      color: #e53e3e;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .section {
+      margin-top: 1.5rem;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: var(--btn-radius);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-yes {
+      background-color: #38a169;
+    }
+
+    .btn-no {
+      background-color: #e53e3e;
+    }
+
+    .btn-rebuttal {
+      background-color: #3182ce;
+    }
+
+    .btn-nq {
+      background-color: #805ad5;
+    }
+
+    footer {
+      background-color: var(--card-color);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">INTRODUCTION</div>
+    <button class="toggle-btn" id="themeToggle">Toggle Dark Mode</button>
+  </header>
+
+  <main class="main">
+    <div class="content">
+      <p><strong>Hi, this is [agent] calling regarding your recent credit request.</strong> Our service provides a free review to find the savings and benefits you may qualify for. Can I ask you a few questions to help you save money?</p>
+
+      <p class="response">[Response]</p>
+
+      <div class="section">
+        <p>Thank you. For starters, are you currently working?<button class="btn btn-yes" onclick="location.href='Debt Settlement.html'">YES</button></p>
+
+      </div>
+
+      <div class="section">
+        <p>If "Not Working" / Limited or No Income<button class="btn btn-no" onclick="location.href='ACA.html'">NO</button></p>
+        
+      </div>
+
+      <div class="section" style="color: #e53e3e; margin-top: 2rem;">
+        <p>If the lead is not interested, make at least one rebuttal attempt by clicking the 'Rebuttals' tab. If the lead still declines, click the Not Interested button in the rebuttals tab for student loan script.</p>
+      </div>
+
+      <!-- ✅ Embedded State Checker -->
+      <div class="section mt-10">
+        <h2 class="text-2xl font-bold text-blue-700 dark:text-white mb-4">State Eligibility Checker</h2>
+        <div class="bg-white dark:bg-gray-900 p-6 rounded-3xl shadow-xl w-full max-w-md mx-auto">
+          <form onsubmit="return false" class="space-y-6">
+            <div class="text-left">
+              <label for="state" class="block text-gray-700 dark:text-gray-300 text-sm font-semibold mb-2">Enter State Abbreviation</label>
+              <input type="text" id="state" name="state"
+                     class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl text-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                     placeholder="e.g., TX, FL, AZ" autocomplete="off" />
+            </div>
+            <button type="submit" id="submit"
+                    class="w-full bg-blue-600 text-white font-bold text-lg py-3 rounded-xl hover:bg-blue-700 transition-all duration-200"
+                    onclick="check()">
+              Check Eligibility
+            </button>
+          </form>
+          <h2 id="result" class="mt-6 text-xl font-medium"></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-rebuttal" onclick="location.href='rebuttals.html'">REBUTTALS</button>
+      <button class="btn btn-nq" onclick="location.href='Student Loans.html'">NQ - NOT QUALIFIED</button>
+    </div>
+  </main>
+
+  <footer>
+    Credit America Script V1 | Property of IGrant Marketing Services.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const theme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+
+    const greenStates = ["AL", "AZ", "FL", "IL", "IN", "KS", "LA", "MI", "MO", "MS", "NH", "OH", "OK", "SC", "TN", "TX", "UT"];
+
+    const resultElement = document.getElementById("result");
+    const inputField = document.getElementById("state");
+
+    function check() {
+      const inputtedState = inputField.value.trim().toUpperCase();
+
+      resultElement.textContent = "Checking...";
+      resultElement.className = "mt-6 text-xl font-medium text-gray-600 dark:text-gray-300";
+
+      if (!inputtedState) {
+        resultElement.textContent = "Please enter a state abbreviation.";
+        resultElement.className = "mt-6 text-xl font-medium text-yellow-600 dark:text-yellow-400";
+        return;
+      }
+
+      if (greenStates.includes(inputtedState)) {
+        resultElement.textContent = `${inputtedState} is an ACCEPTED state.`;
+        resultElement.className = "mt-6 text-xl font-semibold text-green-600 dark:text-green-400";
+      } else {
+        resultElement.textContent = `${inputtedState} is NOT an accepted state.`;
+        resultElement.className = "mt-6 text-xl font-semibold text-red-600 dark:text-red-400";
+      }
+
+      inputField.value = '';
+    }
+  </script>
+</body>
+</html>

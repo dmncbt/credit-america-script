@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAX SETTLEMENT SCREENING</title>
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f0f4fa;
+      --text-color: #1c1c1c;
+      --card-color: #ffffff;
+      --accent-color: #2b6cb0;
+      --btn-radius: 25px;
+      --transition-speed: 0.3s;
+    }
+
+    body.dark {
+      --bg-color: #1e1e2f;
+      --text-color: #e2e8f0;
+      --card-color: #2c2c3e;
+      --accent-color: #4299e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--card-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .toggle-btn {
+      padding: 0.5rem 1rem;
+      background-color: var(--accent-color);
+      border: none;
+      color: white;
+      font-weight: 600;
+      border-radius: var(--btn-radius);
+      cursor: pointer;
+      transition: background-color var(--transition-speed);
+    }
+
+    .toggle-btn:hover {
+      background-color: #265a94;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .main {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content {
+      max-width: 800px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: var(--card-color);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: background-color var(--transition-speed);
+    }
+
+    .section {
+      margin-top: 1.5rem;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .btn {
+      padding: 0.9rem 2rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: var(--btn-radius);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-rebuttal {
+      background-color: #3182ce;
+    }
+
+    .btn-nq {
+      background-color: #805ad5;
+    }
+
+    .btn-back {
+      background-color: #38a169;
+    }
+
+    footer {
+      background-color: var(--card-color);
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    @media (max-width: 600px) {
+      .content {
+        padding: 1.2rem;
+        font-size: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">TAX SETTLEMENT SCREENING</div>
+    <button class="toggle-btn" id="themeToggle">Toggle Dark Mode</button>
+  </header>
+
+  <main class="main">
+    <div class="content">
+      <p>1. Approximately how much do you currently owe the IRS or state in back taxes?(Qualify if $10,000 or more) <strong style="color:red;">Must be YES </strong></p>
+      <BR>
+      <p>2. Are these debts from recent years, older tax years, or a mix of both? <strong style="color:red;">Any answer is OK</strong></p>
+      <BR>
+      <p>3. Have you already tried to set up a payment plan or worked with another tax relief company? <strong style="color:red;">Any answer is OK</strong></p>
+      <BR>
+      <p>4. Do you have a steady monthly income? <strong style="color:red;">Must be YES</strong></p>
+      <BR>
+      <p>5. Do you own a home or major assets that could be impacted by IRS actions? <strong style="color:red;">Any answer is OK</strong></p>
+      <BR>
+      <p>6. If a program could significantly reduce what you owe or stop collections, would you like to speak to a licensed tax resolution specialist today? <strong style="color:red;">Must be YES</strong></p>
+      <BR>
+      <p>- (Wait for "Yes" - if hesitant, use soft reassurance)</p>
+      <BR>
+      <p>- This is just an informational call - there's no obligation. Our goal is simply to help you understand your options.</p>
+      <BR>
+      <p>- I just need your verbal consent to transfer this call to a tax professional who can explain your relief options.</p>
+      <br>
+      <p>-Do I have your permission to proceed? <strong style="color:red;">- (Affirmative YES)</strong></p>
+      <BR>
+      <p style="color: yellowgreen;"><strong>Perfect, one moment while I connect you directly with a tax resolution expert who can help you.</strong></p>
+    </div>
+
+    <div class="buttons">
+      <button class="btn btn-rebuttal" onclick="location.href='rebuttals.html'">REBUTTALS</button>
+      <button class="btn btn-nq" onclick="location.href='Student Loans.html'">NQ - NOT QUALIFIED</button>
+      <button class="btn btn-back" onclick="location.href='index.html'">INTRODUCTION</button>
+    </div>
+  </main>
+
+  <footer>
+    Credit America Script V1 | Property of IGrant Marketing Services.
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const theme = body.classList.contains('dark') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+  </script>
+</body>
+</html>
